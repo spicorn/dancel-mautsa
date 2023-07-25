@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
   setTimeout(function() {
     // Remove the loading page
     loadingPage.remove();
-  }, 7000);
+  }, 5000);
 });
 
 //loading page ends//
