@@ -54,12 +54,12 @@
 }
 
 .content__contain:before {
-  content: "[";
+  content: "{";
   left: 0;
 }
 
 .content__contain:after {
-  content: "]";
+  content: "}";
   position: absolute;
   right: 0;
 }
