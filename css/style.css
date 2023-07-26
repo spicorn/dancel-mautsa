@@ -760,137 +760,59 @@ button:hover {
   padding-right: 7rem;
 }
 
-.flip-card {
-  background-color: transparent;
+.skill-card {
   width: 190px;
   height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
-  animation: rotation_481 4000ms infinite linear;
-}
-
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-}
-
-.flip-card-inner {
+  background: #181a1b;
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 3s;
-  transform-style: preserve-3d;
-}
-
-@keyframes rotation_481 {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  0% {
-    transform: rotateZ(360deg);
-  }
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  box-shadow: 0 8px 14px 0 #1df2ee7a;
-  position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /*border: 1px solid #1df2f0;*/
-  border-radius: 1rem;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
-.progress {
-  margin-top: -20px auto;
-  margin-left: 15px;
-  width: 100vh;
-  display: flex;
-  position: relative;
-}
-
-.outer {
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-    -6px -6px 10px -1px rgba(255, 255, 255, 0);
-  padding: 19px;
-}
-
-.inner {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(255, 255, 255, 0),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 0),
-    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-}
-
-#number {
-  font-weight: 600;
-  column-rule: #555;
-}
-
-circle {
-  fill: none;
-  stroke: url(#GradientColor);
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  animation: anim 2s linear forwards;
-}
-
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@keyframes anim {
-  100% {
-    stroke-dashoffset: 165;
-  }
-}
-
-.flip-card-front {
-  background: linear-gradient(
-    120deg,
-    #181a1b 60%,
-    rgba(255, 231, 222, 0.178) 88%,
-    rgba(255, 211, 195, 0.171) 40%,
-    #1df2f0 48%
-  );
+.skill-card h2 {
+  z-index: 1;
   color: #1df2f0;
+  text-transform: uppercase;
+  font-size: 2em;
 }
 
-.flip-card-back {
-  background: linear-gradient(
-    120deg,
-    #181a1b 30%,
-    #181a1b 88%,
-    rgba(255, 228, 196, 0.144) 40%,
-    #181a1b 78%
+.skill-card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(0, 183, 255),
+    rgba(255, 241, 48, 0.39)
   );
-  color: white;
-  transform: rotateY(180deg);
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  background: #181a1b;
+  inset: 5px;
+  border-radius: 15px;
+}
+.skill-card:hover:before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), rgb(128, 0, 0));
+  animation: rotBGimg 3.5s linear infinite;
 }
 
 /*---- skills section ends----*/
@@ -1168,43 +1090,6 @@ svg {
     padding-left: 3rem;
   }
 
-  /*.home .content img {
-    height: 9rem;
-    width: 170px;
-    border-radius: 50%;
-    padding-left: -4rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-
-  .home .content .animated-text {
-    position: absolute;
-    padding-top: 1em;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .home .content p {
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1.2rem;
-    color: #aaa;
-    padding: 1rem 0;
-  }
-
-  .content h2 {
-    margin-top: 3rem;
-    color: #aaa;
-    text-align: center;
-  }
-
-  .home .content .social-media-btn {
-    padding: 1rem 4rem 0 4rem;
-    font-size: 1.3rem;
-  }*/
-
   .about {
     padding-top: 1rem;
   }
@@ -1250,7 +1135,7 @@ svg {
     flex-direction: row;
   }
 
-  .flip-card {
+  .skill-card {
     transform: translateY(0px);
     animation: float 6s ease-in-out infinite;
     margin: auto;
@@ -1412,21 +1297,6 @@ svg {
     color: #ffffff88;
   }
 
-  /*.tech{
-    text-align: center;
-    padding-top: 19rem;
-  }
-
-  .tech h2{
-    color: #aaa;
-
-  }
-
-  .tech img{
-    padding-top: 1rem;
-    height: 3rem;
-  }*/
-
   .about {
     margin-top: 30rem;
     text-align: center;
@@ -1477,7 +1347,7 @@ svg {
     flex-direction: column;
   }
 
-  .flip-card {
+  .skill-card {
     margin: auto;
     transform: translateY(0px);
     animation: float 6s ease-in-out infinite;
