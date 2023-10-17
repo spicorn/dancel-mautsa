@@ -829,87 +829,113 @@ button:hover {
   color: #fff;
 }
 
-.portfolio .box-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(20rem, 1fr)) [auto-fit];
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 2rem;
-}
-
-.portfolio .box-container .box {
-  margin: auto;
-  position: relative;
-}
-
-.portfolio .box-container .card__content a {
-  color: #1df2ee96;
-  font-size: 1rem;
-  margin: auto;
-  text-transform: none;
-}
-
-.card {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  background: #181a1b;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carousel-container {
+  border-radius: 30px;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 0 30px -20px #223344;
+  margin: auto;
+  z-index: 0;
 }
 
-.card img {
-  width: 300px;
-  height: 200px;
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  display: block;
+  width: 100%;
 }
 
-.card:hover {
-  transform: rotate(-5deg) scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card__content {
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 100%;
-  height: 100%;
+  transform: translate(0, -50%);
+  width: auto;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #fff;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card:hover .card__content {
-  transform: translate(-50%, -50%) rotate(0deg);
-  opacity: 1;
-}
-
-.card__title {
-  margin: 0;
+  color: white;
+  font-weight: bold;
   font-size: 24px;
-  color: #333;
-  font-weight: 700;
+  border-radius: 0 8px 8px 0;
+  background: rgba(173, 216, 230, 0.1);
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 8px 0 0 8px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(173, 216, 230, 0.3);
 }
 
-.card__description {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #777;
-  line-height: 1.4;
+/* Caption text */
+
+.text a{
+  color: #f2f2f2;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 8px 12px;
 }
 
-.card:hover img {
-  scale: 0;
-  transform: rotate(-45deg);
+.text p{
+  color: #f2f2f2;
+}
+.text  { 
+  background-color: rgba(10, 10, 20, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.dots-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* The dots/bullets/indicators */
+.dots{
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin: 0 4px;
+  background-color: rgba(173, 216, 230, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.active,
+.dots:hover {
+  background-color:#1df2f0;
+}
+
+/* transition animation */
+.animate {
+  -webkit-animation-name: animate;
+  -webkit-animation-duration: 1s;
+  animation-name: animate;
+  animation-duration: 2s;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1.1) rotateY(10deg);
+  }
+  to {
+    transform: scale(1) rotateY(0deg);
+  }
 }
 
 /*---- portfolio section ends----*/
@@ -1162,26 +1188,8 @@ button:hover {
     font-size: 1.5rem;
   }
 
-  .portfolio .box-container .box .content h3 {
-    font-size: 1.5rem;
-  }
 
-  .portfolio .box-container .box {
-    margin: auto;
-  }
-
-  .portfolio .box-container .box .image {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    height: 11rem;
-    width: 15rem;
-  }
-
-  .portfolio .box-container .box .icons {
-    height: 1rem;
-    width: 15rem;
-  }
+  
 }
 
 @media screen and (max-width: 991px) {
@@ -1369,21 +1377,7 @@ button:hover {
   .portfolio .heading h3 span {
     font-size: 2.5rem;
   }
-
-  .portfolio .box {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .portfolio .box .card {
-    max-width: 200px;
-  }
-
-  .card__description {
-    font-size: 0.7rem;
-  }
+  
 }
 
 @media screen and (max-width: 475px) {
