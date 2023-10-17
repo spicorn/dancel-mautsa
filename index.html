@@ -163,54 +163,57 @@
 
     <!-- portfolio section starts  -->
 
-    <section class="portfolio" id="projects">
+   <section class="portfolio" id="projects">
       <div class="heading"   data-aos="zoom-in" data-aos-delay="150">
         <h3>Port<span>folio</span></h3>
       </div>
 
-      <div class="box-container">
-        <div class="box"  data-aos="fade-right" data-aos-delay="150">
-          <div class="card">
-            <img src="img/burger.png" alt="" />
-            <div class="card__content">
-              <p class="card__title">Burger <span>Store</span></p>
-              <p class="card__description">
-                this is a simple responsive buger website. it allows users to go through the menu of the retaurant and be able to choose the type of burger they want. it also includes a search button fuctionality.
-              </p>
-              <a href="https://spicorn.github.io/burger/"<i class="fa-solid fa-arrow-up-right-from-square"></i>live</a>
-              <a href="https://github.com/spicorn/burger.git" <i class="fab fa-github"></i
-              >code</a>
-            </div>
-          </div>
-        </div>
+      <!-- Full-width images with number and caption text -->
+<div class="carousel-container" data-aos="fade-left" data-aos-delay="150">
+  <div class="mySlides animate">
+    <img src="img/burger.png" alt="slide" />
+   
+    <div class="text">
+      <p>
+        This is a simple responsive buger website. It allows users to go through the menu of the retaurant and be able to choose the type of burger they want. It also includes a search button fuctionality.
+      </p>
+      <a href="https://spicorn.github.io/burger/"<i class="fa-solid fa-arrow-up-right-from-square"></i>live</a>
+      <a href="https://github.com/spicorn/burger.git" <i class="fab fa-github"></i>code</a>
+    </div>
+  </div>
 
-        <div class="box"  data-aos="zoom-out" data-aos-delay="150" >
-          <div class="card">
-            <img src="img/daf.png" alt="" />
-            <div class="card__content">
-              <p class="card__title">Ha<span>ss</span></p>
-              <p class="card__description">
-                it is an upcoming company which sales different types of truck parts such as air filters, compressors etc. they also provide services such as fixing and fiiting in the parts of the trucks.<b>(still under constucion)</b>
-              </p>
-              <a href="https://spicorn.github.io/project_hass/"<i class="fa-solid fa-arrow-up-right-from-square"></i>live</a>
-              <a href="https://github.com/spicorn/project_hass.git" <i class="fab fa-github"></i
-              >code</a>
-            </div>
-          </div>
-        </div>
+  <div class="mySlides animate">
+    <img src="img/daf.png" alt="slide" />
+    <div class="text">
+      <p>
+        It is an upcoming company which sales different types of truck parts such as air filters, compressors etc. They also provide services such as fixing and fiiting in the parts of the trucks.<b>(Still Under Constucion)</b>
+      </p>
+      <a href="https://spicorn.github.io/burger/"<i class="fa-solid fa-arrow-up-right-from-square"></i>live</a>
+      <a href="https://github.com/spicorn/burger.git" <i class="fab fa-github"></i>code</a>
+    </div>
+  </div>
 
-        <div class="box"  data-aos="fade-left" data-aos-delay="300" >
-          <div class="card">
-            <img src="img/soon.webp" alt="" />
-            <div class="card__content">
-              <p class="card__title">Gam<span>ing</span></p>
-              <p class="card__description">
-               gaming store coming soon🫠....🫠
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="mySlides animate">
+    <img src="img/soon.webp" alt="slide" />
+    <div class="text">
+      <p>
+        Gaming store coming soon😉....🤞
+      </p>
+    </div>
+  </div>
+
+  
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="prevSlide()">&#10094;</a>
+  <a class="next" onclick="nextSlide()">&#10095;</a>
+
+  <!-- The dots/circles -->
+  <div class="dots-container">
+    <span class="dots" onclick="currentSlide(1)"></span>
+    <span class="dots" onclick="currentSlide(2)"></span>
+    <span class="dots" onclick="currentSlide(3)"></span>
+  </div>
+</div>
     </section>
 
     <!--portfolio section ends -->
