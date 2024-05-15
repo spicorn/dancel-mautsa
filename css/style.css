@@ -931,7 +931,7 @@ button:hover {
 }
 
 .card__links .link {
-  margin: auto;
+  text-align: centre;
   color: var(--font-color);
   font-weight: 600;
   font-size: 15px;
