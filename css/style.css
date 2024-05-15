@@ -928,10 +928,10 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-self: flex-end;
+  margin: auto;
 }
 
 .card__links .link {
-  text-align: centre;
   color: var(--font-color);
   font-weight: 600;
   font-size: 15px;
